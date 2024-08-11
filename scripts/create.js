@@ -3,7 +3,7 @@ import shell from "shelljs";
 import chalk from "chalk";
 import logSymbols from "log-symbols";
 import clone from "./clone.js";
-import { removeDir, changePackageJson } from "./utils.js";
+import { removeDir, updatePackageJson } from "./utils.js";
 import { templates, messages } from "./constants.js";
 import {
   inquirerConfirm,
@@ -47,7 +47,7 @@ export default async function create(appName, option) {
         `不存在模板${chalk.yellowBright(option.template)}`
       );
       console.log(
-        `\r\n运行 ${chalk.cyanBright("my-cli ls")} 查看所有可用模板\r\n`
+        `\r\n运行 ${chalk.cyanBright("g-cli ls")} 查看所有可用模板\r\n`
       );
       return;
     }
@@ -99,6 +99,6 @@ export default async function create(appName, option) {
 
   // 最后更新package.json
   if (answers.name || answers.description) {
-    await changePackageJson(appName, answers);
+    await updatePackageJson(appName, answers);
   }
 }
