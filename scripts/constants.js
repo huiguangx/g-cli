@@ -6,7 +6,7 @@
 export const templates = [
   {
     name: "vue-template",
-    value: "direct:https://gitee.com/账号/vue-template.git",
+    value: "direct:https://github.com/gyt95/h5#main",
     desc: "基于vite的自定义vue项目模板",
   },
   {
